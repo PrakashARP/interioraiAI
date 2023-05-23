@@ -19,6 +19,11 @@ const SelectOptions: React.FC<SelectOptionsProps> = (props: {  title: string, op
   const handleValueChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedValue(event.target.value);
   };
+  console.log("props=======",props);
+  
+  if (Object.keys(props).length>0) {
+   return <h1>No Content to render</h1> 
+  }
 
   return (
     <div>
