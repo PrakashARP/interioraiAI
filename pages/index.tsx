@@ -9,7 +9,7 @@ import Logo from "../components/Icons/Logo";
 import Modal from "../components/Modal";
 import cloudinary from "../utils/cloudinary";
 import getBase64ImageUrl from "../utils/generateBlurPlaceholder";
-import type { ImageProps } from "../utils/types";
+import type { ImageProps, Option } from "../utils/types";
 import { useLastViewedPhoto } from "../utils/useLastViewedPhoto";
 import FileUpload from "./FileZone/_filezone";
 import SelectOptions from "./Component/SelectOption";
@@ -31,7 +31,7 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
       setLastViewedPhoto(null);
     }
   }, [photoId, lastViewedPhoto, setLastViewedPhoto]);
-  const roomOptions = [
+  const roomOptions:Array<Option> = [
   {label:"Living room",value: 1 },
   {label:"Bedroom",value:2},
   {label:"Bath room",value: 3},
@@ -63,8 +63,8 @@ const Home: NextPage = ({ images }: { images: ImageProps[] }) => {
   {label:"Mudroom",value:29},
   {label:"Drop zone",value:30},
   ];
-  const modeOptions = [
-    {labe:"Virtual staging (locks walls, slower)",value: "virtual staging"},
+  const modeOptions:Array<Option> = [
+    {label:"Virtual staging (locks walls, slower)",value: "virtual staging"},
   {label:"Interior design (more creative, fast)",value:"interior design"},
   {label:"Freestyle (no image needed, very fast)",value: "freestyle"},
   {label:"360° panaroma (beta, does not use image)",value:"360"},

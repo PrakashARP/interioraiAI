@@ -17,3 +17,13 @@ export interface SharedModalProps {
   navigation: boolean
   direction?: number
 }
+
+export interface Option {
+  label: string;
+  value: string|number;
+}
+
+export  interface SelectOptionsProps {
+  title: string;
+  options: Option[];
+}
